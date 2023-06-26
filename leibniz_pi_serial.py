@@ -1,3 +1,7 @@
+# Por Marcos Rocha
+# Explicação e prova: https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80
+# Equação em Latex: \sum_{n=0}^{\infty } \frac{(-1)^{n}}{2n+1}
+
 import random
 import time
 

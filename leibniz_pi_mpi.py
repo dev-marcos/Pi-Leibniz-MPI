@@ -1,3 +1,5 @@
+# Por Marcos Rocha
+
 from mpi4py import MPI
 
 def leibniz_pi_part(n, start, end):
@@ -7,11 +9,13 @@ def leibniz_pi_part(n, start, end):
         pi += term
     return pi
 
+inicio = MPI.Wtime()
+
 comm = MPI.COMM_WORLD
 size = comm.Get_size()
 rank = comm.Get_rank()
 
-n = 1000000
+n = 10000000
 
 # calculando o intervalo para cada processo
 start = rank*(n//size)
@@ -26,4 +30,7 @@ pi_parts = comm.gather(pi_part, root=0)
 # o processo mestre calcula a estimativa final de pi
 if rank == 0:
     pi_approx = sum(pi_parts) * 4
-    print("Estimativa de Pi = ", pi_approx)
+    print(f"Valor de PI: {pi_approx}")
+    tempo_gasto = MPI.Wtime()-inicio
+    print(f"Tempo Gasto: {tempo_gasto:,.4}s")
+
