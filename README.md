@@ -8,6 +8,8 @@ A Série de Leibniz para π é uma série infinita que converge para π. A séri
 
 π = 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - 1/11 + ...)
 
+$$ \sum_{n=0}^{\infty } \frac{(-1)^{n}}{2n+1} $$
+
 ## Instalação
 
 Para executar este projeto, você precisará instalar o seguinte:
